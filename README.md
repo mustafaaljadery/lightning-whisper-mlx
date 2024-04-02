@@ -38,7 +38,7 @@ Quantization
 #### Example
 
 ```python
-from lightning-whisper-mlx import LightningWhisperMLX
+from lightning_whisper_mlx import LightningWhisperMLX
 
 whisper = LightingWhisperMLX(model="distil-medium.en", batch_size=12, quant=None)
 
