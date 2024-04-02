@@ -4,6 +4,8 @@ An incredibly fast implementation of Whisper optimized for Apple Silicon.
 
 ![Whisper Decoding Speed](./speed_image.png)
 
+10x faster than Whisper CPP, 4x faster than current MLX Whisper implementation.
+
 ## Features
 
 - **Batched Decoding** -> Higher Throughput
