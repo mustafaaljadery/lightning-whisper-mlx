@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="w-full flex flex-col justify-center items-center">
+    <div class="w-3/5 flex flex-col pb-24">
+      <h1 class="mt-20 text-center text-5xl text-[#363636] font-bold">
+        Lightning Whisper MLX
+      </h1>
+      <p class="text-center mt-6 px-20 text-gray-500">
+        An incredibly fast implementation of Whisper optimized for Apple
+        Silicon.
+      </p>
+      <div class="flex flex-row mt-8 justify-center items-center space-x-4">
+        <a
+          target="_blank"
+          class="text-center underline text-blue-500"
+          href="https://www.maxaljadery.com/"
+          >Mustafa Aljadery</a
+        >
+        <a target="_blank" class="text-center underline text-gray-700" href=""
+          >GitHub Link</a
+        >
+      </div>
+      <h2 class="mt-12 text-2xl font-semibold text-gray-900">Results</h2>
+      <img
+        src="./speed_image.png"
+        alt="Whisper Speed Breakdown"
+        class="mt-8 h-[400px] mx-auto"
+      />
+      <p class="text-center text-gray-700 font-light">
+        10x faster than Whisper CPP, 4x faster than current MLX Whisper
+        implementation.
+      </p>
+      <h2 class="mt-12 text-2xl font-semibold text-gray-900">Features</h2>
+      <ul class="list-disc flex flex-col space-y-2 mt-4">
+        <li class="ml-8 text-gray-900">
+          <b>Batched Decoding</b> -> Higher Throughput
+        </li>
+        <li class="ml-8 text-gray-900">
+          <b>Distilled Models</b> -> Faster Decoding (less layers)
+        </li>
+        <li class="ml-8 text-gray-900">
+          <b>Quantized Models</b> -> Faster Memory Movement
+        </li>
+        <li class="ml-8 italic text-gray-400">
+          Coming Soon: Speculative Decoding -> Faster Decoding with Assistant
+          Model
+        </li>
+      </ul>
+      <h2 class="mt-12 text-2xl font-semibold text-gray-900">Installation</h2>
+      <p class="mt-2 text-gray-700">Install lightning whisper mlx using pip:</p>
+      <code class="mt-4 p-2.5 rounded bg-gray-100"
+        >pip install lightning-whisper-mlx
+      </code>
+      <h2 class="mt-12 text-2xl font-semibold text-gray-900">Usage</h2>
+      <div class="mt-4 flex flex-row space-x-2">
+        <p class="font-medium my-auto text-gray-900">Models:</p>
+        <code class="py-1 px-2 my-auto bg-gray-100 text-sm rounded"
+          >["tiny", "small", "distil-small.en", "base", "medium",
+          distil-medium.en", "large", "large-v2", "distil-large-v2", "large-v3",
+          "distil-large-v3"]</code
+        >
+      </div>
+      <div class="mt-4 flex flex-row space-x-2">
+        <p class="font-medium my-auto text-gray-900">Quantization:</p>
+        <code class="py-1 px-2 my-auto bg-gray-100 text-sm rounded"
+          >[None, "4bit", "8bit"]</code
+        >
+      </div>
+      <h3 class="mt-8 text-lg font-semibold text-gray-900">Example</h3>
+      <code class="p-4 mt-2 bg-gray-100 rounded-lg">
+        from lightning-whisper-mlx import LightingWhisperMLX <br /><br />
+        whisper = LightingWhisperMLX(model="base", batch_size=12, quant=None)
+        <br /><br />
+        text = whisper.transcribe(audio_path="/audio.mp3")['text'] <br /><br />
+        print(text)
+      </code>
+      <h2 class="mt-12 text-2xl font-semibold text-gray-900">Credits</h2>
+      <ul class="list-disc flex flex-col space-y-2 mt-4">
+        <li class="ml-8 text-gray-900">
+          <a
+            href="https://github.com/mustafaaljadery"
+            class="underline"
+            target="_blank"
+            ><b>Mustafa</b></a
+          >
+          - Creator of Lightning Whisper MLX
+        </li>
+        <li class="ml-8 text-gray-900">
+          <a href="https://github.com/awni" target="_blank" class="underline"
+            ><b>Awni</b></a
+          >
+          - Implementation of Whisper MLX (I built on top of this)
+        </li>
+        <li class="ml-8 text-gray-900">
+          <a
+            href="https://github.com/Vaibhavs10"
+            target="_blank"
+            class="underline"
+            ><b>Vaibhav</b></a
+          >
+          - Inspired me to build this (He created a version optimized for Cuda)
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
