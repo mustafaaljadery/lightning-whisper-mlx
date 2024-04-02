@@ -84,7 +84,7 @@
       <h3 class="mt-8 text-lg font-semibold text-gray-900">Example</h3>
       <code class="p-4 mt-2 bg-gray-100 rounded-lg break-all">
         from lightning_whisper_mlx import LightningWhisperMLX <br /><br />
-        whisper = LightingWhisperMLX(model="base", batch_size=12, quant=None)
+        whisper = LightningWhisperMLX(model="base", batch_size=12, quant=None)
         <br /><br />
         text = whisper.transcribe(audio_path="/audio.mp3")['text'] <br /><br />
         print(text)

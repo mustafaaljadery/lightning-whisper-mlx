@@ -40,7 +40,7 @@ Quantization
 ```python
 from lightning_whisper_mlx import LightningWhisperMLX
 
-whisper = LightingWhisperMLX(model="distil-medium.en", batch_size=12, quant=None)
+whisper = LightningWhisperMLX(model="distil-medium.en", batch_size=12, quant=None)
 
 text = whisper.transcribe(audio_path="/audio.mp3")['text']
 
