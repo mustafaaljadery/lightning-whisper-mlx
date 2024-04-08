@@ -1,1 +1,5 @@
+.DS_Store
 /lightning-whisper
+/build
+/dist
+/*.egg-info
