@@ -32,7 +32,11 @@ def load_model(
     model = whisper.Whisper(model_args, dtype)
 
     if quantization is not None:
-        nn.QuantizedLinear.quantize_module(model, **quantization)
+        class_predicate = (
+            lambda p, m: isinstance(m, (nn.Linear, nn.Embedding))
+            and f"{p}.scales" in weights
+        )
+        nn.quantize(model, **quantization, class_predicate=class_predicate)
 
     model.update(weights)
     mx.eval(model.parameters())
